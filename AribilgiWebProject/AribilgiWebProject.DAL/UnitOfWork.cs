@@ -9,11 +9,11 @@ namespace AribilgiWebProject.DAL
     {
 		private static NinicoDbEntities context => new NinicoDbEntities();
 
-        public static int AddData<T>(T model) where T : BaseModel
+        public static T AddData<T>(T model) where T : BaseModel
         {
-            context.Set<T>().Add(model);
-            int effectedRowCount = context.SaveChanges();
-            return effectedRowCount;
+            var addedData = context.Set<T>().Add(model);
+            context.SaveChanges();
+            return addedData;
         }
 
         public static List<T> GetAll<T>() where T :BaseModel
@@ -28,21 +28,21 @@ namespace AribilgiWebProject.DAL
             return resultData;
         }
 
-        public static int UpdateData<T>(T model) where T : BaseModel
+        public static T UpdateData<T>(T model) where T : BaseModel
         {
             var updating = context.Set<T>().Find(model.ID);
             updating = model;
             context.Entry(updating).State = EntityState.Modified;
-            var effectedRowCount = context.SaveChanges();
-            return effectedRowCount;
+            context.SaveChanges();
+            return model;
         }
 
-        public static int RemoveData<T>(int id) where T : BaseModel
+        public static T RemoveData<T>(int id) where T : BaseModel
         {
             var deletingData = context.Set<T>().Find(id);
-            context.Set<T>().Remove(deletingData);
-            var effectedRowCount = context.SaveChanges();
-            return effectedRowCount;
+            var deletedData = context.Set<T>().Remove(deletingData);
+            context.SaveChanges();
+            return deletedData;
         }
 
     }

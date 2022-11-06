@@ -11,15 +11,15 @@ namespace AribilgiWebProject.BLL
 {
     public class AccountBusiness
     {
-        public int AddUser(User user)
-        {
-            return UnitOfWork.AddData(user);
-        }
+        //public int AddUser(User user)
+        //{
+        //    return UnitOfWork.AddData(user);
+        //}
 
-        public User Login(string Username, string password)
-        {
-            return UnitOfWork.GetAll<User>().Find(_ => _.UserName == Username
-                                                && _.Password == password);
-        }
+        //public User Login(string Username, string password)
+        //{
+        //    return UnitOfWork.GetAll<User>().Find(_ => _.UserName == Username
+        //                                        && _.Password == password);
+        //}
     }
 }

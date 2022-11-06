@@ -5,7 +5,7 @@
 
 	$(window).on('load', function () {
 
-		$('#preloader').delay(350).fadeOut('slow');
+		$('#preloader').delay(999999).fadeOut('slow');
 	
 		$('body').delay(350).css({ 'overflow': 'visible' });
 	

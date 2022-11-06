@@ -8530,4 +8530,8 @@ p.checkout-coupon input[type=text]:focus {
   }
 }
 
+.hideLoader{
+    visibility:hidden;
+}
+
 /*# sourceMappingURL=main.css.map */
