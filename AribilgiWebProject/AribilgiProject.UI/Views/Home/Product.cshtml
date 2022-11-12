@@ -1,4 +1,5 @@
-﻿
+﻿@model AribilgiWebProject.BLL.Classes.BaseResponseModel<List<AribilgiProject.UI.ViewModel.ProductViewModel>>
+
 <!-- breadcrumb-area -->
 <section class="breadcrumb__area pt-60 pb-60 tp-breadcrumb__bg" data-background="/Content/img/banner/breadcrumb-01.jpg">
     <div class="container">
@@ -235,726 +236,90 @@
                     </div>
                     <div class="tab-pane fade show active" id="nav-popular" role="tabpanel" aria-labelledby="nav-popular-tab">
                         <div class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 tpproduct">
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-21.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-22.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
+                            @*Ürünler verisi burda dönüyor*@
+                            @{
+                                if (Model.IsSuccess)
+                                {
+                                    foreach (var item in Model.ResponseModel)
+                                    {
+                                        <div class="col">
+                                            <div class="tpproduct tpproductitem mb-15 p-relative">
+                                                <div class="tpproduct__thumb">
+                                                    <div class="tpproduct__thumbitem p-relative">
+                                                        <a href="shop-details-2.html">
+                                                            <img src="@(item.Images?.FirstOrDefault()?.PicUrl ?? String.Empty)" alt="product-thumb">
+                                                            <img class="thumbitem-secondary" src="@(item.Images?.LastOrDefault()?.PicUrl ?? String.Empty)" alt="product-thumb">
+                                                        </a>
+                                                        <div class="tpproduct__thumb-bg">
+                                                            <div class="tpproductactionbg">
+                                                                <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
+                                                                <a href="#"><i class="fal fa-exchange"></i></a>
+                                                                <a href="#"><i class="fal fa-eye"></i></a>
+                                                                <a href="wishlist.html"><i class="fal fa-heart"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tpproduct__content-area">
+                                                    <h3 class="tpproduct__title mb-5"><a href="shop-details.html"></a></h3>
+                                                    <div class="tpproduct__priceinfo p-relative">
+                                                        <div class="tpproduct__ammount">
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tpproduct__ratingarea">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <div class="tpproductdot">
+                                                            <a class="tpproductdot__variationitem" href="shop-details.html">
+                                                                <div class="tpproductdot__termshape">
+                                                                    <span class="tpproductdot__termshape-bg"></span>
+                                                                    <span class="tpproductdot__termshape-border"></span>
+                                                                </div>
+                                                            </a>
+                                                            <a class="tpproductdot__variationitem" href="shop-details.html">
+                                                                <div class="tpproductdot__termshape">
+                                                                    <span class="tpproductdot__termshape-bg red-product-bg"></span>
+                                                                    <span class="tpproductdot__termshape-border red-product-border"></span>
+                                                                </div>
+                                                            </a>
+                                                            <a class="tpproductdot__variationitem" href="shop-details.html">
+                                                                <div class="tpproductdot__termshape">
+                                                                    <span class="tpproductdot__termshape-bg orange-product-bg"></span>
+                                                                    <span class="tpproductdot__termshape-border orange-product-border"></span>
+                                                                </div>
+                                                            </a>
+                                                            <a class="tpproductdot__variationitem" href="shop-details.html">
+                                                                <div class="tpproductdot__termshape">
+                                                                    <span class="tpproductdot__termshape-bg purple-product-bg"></span>
+                                                                    <span class="tpproductdot__termshape-border purple-product-border"></span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="tpproduct__rating">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="#"><i class="fas fa-star"></i></a>
+                                                                    <a href="#"><i class="fas fa-star"></i></a>
+                                                                    <a href="#"><i class="fas fa-star"></i></a>
+                                                                    <a href="#"><i class="fas fa-star"></i></a>
+                                                                    <a href="#"><i class="far fa-star"></i></a>
+                                                                </li>
+                                                                <li>
+                                                                    <span></span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">Purab Enormous Miranda Bottle</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-31.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-32.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">Pinkol Enormous Granite Bottle</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-27.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-28.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">Gorgeous Aluminum Table</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-25.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-26.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">Evo Lightweight Granite Shirt</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-29.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-30.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">CLCo. Incredible Paper Car</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-33.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-34.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">Purab Enormous Miranda Bottle</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-23.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-24.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">Progash Durable Granite Hat</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-35.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-36.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">Miklonda Co. Crafted Candles</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-37.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-38.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">Purab Enormous Miranda Bottle</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="tpproduct tpproductitem mb-15 p-relative">
-                                    <div class="tpproduct__thumb">
-                                        <div class="tpproduct__thumbitem p-relative">
-                                            <a href="shop-details-2.html">
-                                                <img src="/Content/img/product/home-two/product-39.jpg" alt="product-thumb">
-                                                <img class="thumbitem-secondary" src="/Content/img/product/home-two/product-40.jpg" alt="product-thumb">
-                                            </a>
-                                            <div class="tpproduct__thumb-bg">
-                                                <div class="tpproductactionbg">
-                                                    <a href="cart.html"><i class="fal fa-shopping-basket"></i></a>
-                                                    <a href="#"><i class="fal fa-exchange"></i></a>
-                                                    <a href="#"><i class="fal fa-eye"></i></a>
-                                                    <a href="wishlist.html"><i class="fal fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__content-area">
-                                        <h3 class="tpproduct__title mb-5"><a href="shop-details.html">Pinkol Enormous Granite Bottle</a></h3>
-                                        <div class="tpproduct__priceinfo p-relative">
-                                            <div class="tpproduct__ammount">
-                                                <span>$31.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tpproduct__ratingarea">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="tpproductdot">
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg"></span>
-                                                        <span class="tpproductdot__termshape-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg red-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border red-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg orange-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border orange-product-border"></span>
-                                                    </div>
-                                                </a>
-                                                <a class="tpproductdot__variationitem" href="shop-details.html">
-                                                    <div class="tpproductdot__termshape">
-                                                        <span class="tpproductdot__termshape-bg purple-product-bg"></span>
-                                                        <span class="tpproductdot__termshape-border purple-product-border"></span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="tpproduct__rating">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="fas fa-star"></i></a>
-                                                        <a href="#"><i class="far fa-star"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <span>(81)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    }
+                                }
+
+                            }
+
+
                         </div>
                     </div>
                 </div>

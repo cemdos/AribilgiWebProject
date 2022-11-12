@@ -1,4 +1,5 @@
-﻿using AribilgiWebProject.BLL.Classes;
+﻿using AribilgiProject.UI.ViewModel;
+using AribilgiWebProject.BLL.Classes;
 using AribilgiWebProject.Model;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,19 @@ namespace AribilgiProject.UI.Controllers
         [HttpGet]
         public string GetAllCategory()
         {
-            var resultData = categoryRepository.GetAll();
-            if (resultData.IsSuccess)
-                resultData.ResponseModel = 
-                    resultData.ResponseModel.OrderBy(_ => _.Name).ToList();
-            return JsonDataConvert(resultData);
+            var BllData = categoryRepository.GetAll();
+            if (!BllData.IsSuccess)
+                return JsonDataConvert(BllData);
+
+            BllData.ResponseModel = BllData.ResponseModel.OrderBy(_ => _.Name).ToList();
+            BaseResponseModel<List<CategoryViewModel>> responseData = new BaseResponseModel<List<CategoryViewModel>>();
+            responseData.ResponseModel = new List<CategoryViewModel>();
+            foreach (var item in BllData.ResponseModel)
+            {
+                CategoryViewModel viewModelItem = new CategoryViewModel(item);
+                responseData.ResponseModel.Add(viewModelItem);
+            }
+            return JsonDataConvert(responseData);
         }
     }
 }
