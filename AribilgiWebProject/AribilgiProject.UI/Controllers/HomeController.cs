@@ -43,5 +43,10 @@ namespace AribilgiProject.UI.Controllers
             
             return View(responseViewModel);
         }
+
+        public ActionResult Cart()
+        {
+            return View();
+        }
     }
 }

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="BaseModel.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Coupon.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

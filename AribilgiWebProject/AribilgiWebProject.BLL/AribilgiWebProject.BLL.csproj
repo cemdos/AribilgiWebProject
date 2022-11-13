@@ -54,11 +54,13 @@
     <Compile Include="AccountBusiness.cs" />
     <Compile Include="Classes\BaseRepository.cs" />
     <Compile Include="Classes\BaseResponseModel.cs" />
+    <Compile Include="Classes\CouponRepository.cs" />
     <Compile Include="Classes\ImageRepository.cs" />
     <Compile Include="Classes\ProductRepository.cs" />
     <Compile Include="Classes\CategoryRepository.cs" />
     <Compile Include="Classes\UserRepository.cs" />
     <Compile Include="Interfaces\BaseRepository.cs" />
+    <Compile Include="Interfaces\ICouponRepository.cs" />
     <Compile Include="Interfaces\IImageRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
     <Compile Include="Interfaces\ICategoryRepository.cs" />

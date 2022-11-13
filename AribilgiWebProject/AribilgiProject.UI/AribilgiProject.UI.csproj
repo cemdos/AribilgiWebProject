@@ -383,6 +383,8 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\MyAngular\CartCtrl.js" />
+    <Content Include="Scripts\MyAngular\ProductCtrl.js" />
     <Content Include="Scripts\MyAngular\IndexCtrl.js" />
     <Content Include="Scripts\MyAngular\BaseCtrl.js" />
     <Content Include="Web.config" />
@@ -695,6 +697,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CouponController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
@@ -705,6 +708,7 @@
     <Compile Include="ViewModel\BaseResponseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\CouponViewModel.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -740,6 +744,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Views\Home\Product.cshtml" />
+    <Content Include="Views\Home\Cart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,8 +1,5 @@
 using AribilgiWebProject.Model;
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
-using System.Linq;
 
 namespace AribilgiWebProject.DAL
 {
@@ -18,6 +15,7 @@ namespace AribilgiWebProject.DAL
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Tag> Tag { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Coupon> Coupon { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -47,6 +45,10 @@ namespace AribilgiWebProject.DAL
 
             modelBuilder.Entity<Tag>()
                 .Property(e => e.TagName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Coupon>()
+                .Property(e => e.CouponCode)
                 .IsUnicode(false);
         }
     }

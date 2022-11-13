@@ -104,7 +104,7 @@
                                 <div class="header-meta__social d-flex align-items-center ml-25">
                                     <button class="header-cart p-relative tp-cart-toggle">
                                         <i class="fal fa-shopping-cart"></i>
-                                        <span class="tp-product-count">2</span>
+                                        <span ng-show="ShoppingCart.length!=0" class="tp-product-count">{{ShoppingCart.length}}</span>
                                     </button>
                                     <a href="sign-in.html"><i class="fal fa-user"></i></a>
                                     <a href="wishlist.html"><i class="fal fa-heart"></i></a>
@@ -338,7 +338,7 @@
                         <div class="header-meta__social  d-flex align-items-center">
                             <button class="header-cart p-relative tp-cart-toggle">
                                 <i class="fal fa-shopping-cart"></i>
-                                <span class="tp-product-count">2</span>
+                                <span ng-show="ShoppingCart.length!=0" class="tp-product-count">{{ShoppingCart.length}}</span>
                             </button>
                             <a href="sign-in.html"><i class="fal fa-user"></i></a>
                             <a href="wishlist.html"><i class="fal fa-heart"></i></a>
@@ -477,53 +477,35 @@
             <div class="tpcart__product">
                 <div class="tpcart__product-list">
                     <ul>
-                        <li>
+                        <li ng-repeat="cart in ShoppingCart">
                             <div class="tpcart__item">
                                 <div class="tpcart__img">
-                                    <img src="/Content/img/product/home-one/product-1.jpg" alt="">
+                                    <img src="{{cart.Product.Images[0].PicUrl}}" alt="">
                                     <div class="tpcart__del">
-                                        <a href="#"><i class="far fa-times-circle"></i></a>
+                                        <a style="cursor:pointer" ng-click="RemoveToCard(cart)"><i class="far fa-times-circle"></i></a>
                                     </div>
                                 </div>
                                 <div class="tpcart__content">
                                     <span class="tpcart__content-title">
-                                        <a href="shop-details.html">Miko Wooden Bluetooth Speaker</a>
+                                        <a href="shop-details.html">{{cart.Product.Name}}</a>
                                     </span>
                                     <div class="tpcart__cart-price">
-                                        <span class="quantity">1 x</span>
-                                        <span class="new-price">$162.80</span>
+                                        <span class="quantity">{{cart.Quantity}} x</span>
+                                        <span class="new-price">${{cart.Product.UnitPrice}}</span>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="tpcart__item">
-                                <div class="tpcart__img">
-                                    <img src="/Content/img/product/home-one/product-3.jpg" alt="">
-                                    <div class="tpcart__del">
-                                        <a href="#"><i class="far fa-times-circle"></i></a>
-                                    </div>
-                                </div>
-                                <div class="tpcart__content">
-                                    <span class="tpcart__content-title">
-                                        <a href="shop-details.html">Evo Lightweight Granite Shirt</a>
-                                    </span>
-                                    <div class="tpcart__cart-price">
-                                        <span class="quantity">1 x</span>
-                                        <span class="new-price">$138.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+     
                     </ul>
                 </div>
                 <div class="tpcart__checkout">
                     <div class="tpcart__total-price d-flex justify-content-between align-items-center">
                         <span> Subtotal:</span>
-                        <span class="heilight-price"> $300.00</span>
+                        <span class="heilight-price"> ${{GetSubTotal()}}</span>
                     </div>
                     <div class="tpcart__checkout-btn">
-                        <a class="tpcart-btn mb-10" href="cart.html">View Cart</a>
+                        <a class="tpcart-btn mb-10" href="/Home/Cart">View Cart</a>
                         <a class="tpcheck-btn" href="checkout.html">Checkout</a>
                     </div>
                 </div>
