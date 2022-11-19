@@ -379,14 +379,19 @@
     <Content Include="Content\js\swiper-bundle.js" />
     <Content Include="Content\js\waypoints.js" />
     <Content Include="Content\js\wow.js" />
+    <Content Include="Content\select.css" />
+    <Content Include="Content\select.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\MyAngular\CheckoutCtrl.js" />
     <Content Include="Scripts\MyAngular\CartCtrl.js" />
     <Content Include="Scripts\MyAngular\ProductCtrl.js" />
     <Content Include="Scripts\MyAngular\IndexCtrl.js" />
     <Content Include="Scripts\MyAngular\BaseCtrl.js" />
+    <Content Include="Scripts\select.js" />
+    <Content Include="Scripts\select.min.js" />
     <Content Include="Web.config" />
     <Content Include="WebTemplates\Site\a.params.html" />
     <Content Include="WebTemplates\Site\about.html" />
@@ -697,6 +702,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\CouponController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -738,6 +744,7 @@
     <Content Include="Content\fonts\fa-solid-900.woff" />
     <Content Include="Content\fonts\fa-solid-900.woff2" />
     <Content Include="Content\fonts\fa-solid-900d41d.eot" />
+    <Content Include="Content\select.min.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Layout\_Layout.cshtml" />
@@ -745,6 +752,8 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Scripts\select.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

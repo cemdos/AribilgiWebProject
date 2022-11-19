@@ -71,6 +71,10 @@
     <Compile Include="Migrations\202211131058103_Version-1.4.designer.cs">
       <DependentUpon>202211131058103_Version-1.4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202211190919478_Version-1.5.cs" />
+    <Compile Include="Migrations\202211190919478_Version-1.5.designer.cs">
+      <DependentUpon>202211190919478_Version-1.5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NinicoDbEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202211131058103_Version-1.4.resx">
       <DependentUpon>202211131058103_Version-1.4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211190919478_Version-1.5.resx">
+      <DependentUpon>202211190919478_Version-1.5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

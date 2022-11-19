@@ -46,11 +46,13 @@
   <ItemGroup>
     <Compile Include="BaseModel.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="District.cs" />
     <Compile Include="Coupon.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tag.cs" />
+    <Compile Include="City.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

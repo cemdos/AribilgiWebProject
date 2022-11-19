@@ -72,10 +72,10 @@
                                     <div class="coupon">
                                         <input ng-model="CouponCode" id="coupon_code" class="input-text" name="coupon_code" value=""
                                                placeholder="Coupon code" type="text">
-                                        <button ng-click="ApplyCoupon(CouponCode)" class="tp-btn tp-color-btn banner-animation" name="apply_coupon">
+                                        <a ng-click="ApplyCoupon(CouponCode)" class="tp-btn tp-color-btn banner-animation" name="apply_coupon">
                                             Apply
                                             Coupon
-                                        </button>
+                                        </a>
                                     </div>
                                     <div class="coupon2">
                                         <button class="tp-btn tp-color-btn banner-animation" name="update_cart" type="submit">Update cart</button>
@@ -88,8 +88,9 @@
                                 <div class="cart-page-total">
                                     <h2>Cart totals</h2>
                                     <ul class="mb-20">
-                                        <li>Subtotal <span>$250.00</span></li>
-                                        <li>Total <span>$250.00</span></li>
+                                        <li>Subtotal <span>${{GetSubTotal()}}</span></li>
+                                        <li ng-show="GetDiscount()!=0 && GetDiscount()!=null">Discount <span>${{GetDiscount()}}</span></li>
+                                        <li>Total <span>${{GetSubTotal()-GetDiscount()}}</span></li>
                                     </ul>
                                     <a href="checkout.html" class="tp-btn tp-color-btn banner-animation">Proceed to Checkout</a>
                                 </div>

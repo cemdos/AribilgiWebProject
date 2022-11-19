@@ -1,4 +1,4 @@
-﻿var app = angular.module('App', []);
+﻿var app = angular.module('App', ['ui.select']);
 app.controller('BaseCtrl', function ($scope, $http) {
     $scope.IsShowLoader = false;
     if (localStorage.getItem("Cart") != null) {
