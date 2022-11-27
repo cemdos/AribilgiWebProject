@@ -15,10 +15,10 @@ namespace AribilgiWebProject.BLL.Classes
             try
             {
                 responseModel.ResponseModel =
-                UnitOfWork.GetAll<Product>().Where(_ => _.CategoryId == CategoryId).ToList();
+                UnitOfWork.Instance.GetAll<Product>().Where(_ => _.CategoryId == CategoryId).ToList();
                 responseModel.ResponseMessage = "Successfull";
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 responseModel.ErrorMessage= ex.Message;
                 responseModel.IsSuccess = false;

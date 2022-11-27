@@ -53,5 +53,10 @@ namespace AribilgiProject.UI.Controllers
         {
             return View();
         }
+
+        public ActionResult Signin()
+        {
+            return View();
+        }
     }
 }

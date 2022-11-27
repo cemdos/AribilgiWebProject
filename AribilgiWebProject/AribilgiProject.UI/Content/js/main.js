@@ -69,7 +69,7 @@
 
 	////////////////////////////////////////////////////
 	// 04. Nice Select Js
-	$('select').niceSelect();
+	//$('select').niceSelect();
 
 
 	////////////////////////////////////////////////////
@@ -117,23 +117,6 @@
 		$(".cartbody-overlay").removeClass("opened");
 	});
 
-
-	////////////////////////////////////////////////////
-	// 08. Slider Js
-	var sliderswiper = new Swiper('.slider-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 1,
-		effect: "fade",
-		autoplay: {
-			delay: 4500,
-			disableOnInteraction: true,
-		},
-		pagination: {
-			el: ".slider-pagination",
-			clickable: true,
-		},
-	});
 
 
 	////////////////////////////////////////////////////
@@ -215,209 +198,6 @@
 	});
 
 	////////////////////////////////////////////////////
-	// 15. Slider Js
-	var greensliderswiper = new Swiper('.greenslider-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 1,
-		fade: "effect",
-		effect: 'fade',
-		autoplay: {
-			delay: 5000,
-			disableOnInteraction: false,
-		},
-		pagination: {
-			el: ".greenslider-pagination",
-			clickable: true,
-		},
-	});
-
-
-	////////////////////////////////////////////////////
-	// 16. Slider Js
-	var slidertwoswiper = new Swiper('.slidertwo-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 1,
-		effect: 'fade',
-		autoplay: {
-			delay: 5500,
-			disableOnInteraction: false,
-		},
-		pagination: {
-			el: ".slidertwo_pagination",
-			clickable: true,
-		},
-	});
-
-
-	////////////////////////////////////////////////////
-	// 17. Slider Js
-	var slidertwoswiper = new Swiper('.sliderthree-active', {
-		// Optional parameters
-		loop: false,
-		effect: 'fade',
-		slidesPerView: 1,
-		autoplay: {
-			delay: 6000,
-			disableOnInteraction: false,
-		},
-		pagination: {
-			el: ".tpsliderthree__pagination",
-			clickable: true,
-		},
-	});
-
-
-	////////////////////////////////////////////////////
-	// 18. Slider Js
-	var shopswiper = new Swiper('.shopslider-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 6,
-		spaceBetween: 25,
-		centereMode: true,
-		autoplay: {
-			delay: 3500,
-			disableOnInteraction: true,
-		},
-		breakpoints: {
-			'1400': {
-				slidesPerView: 6,
-			},
-			'1200': {
-				slidesPerView: 5,
-			},
-			'992': {
-				slidesPerView: 4,
-			},
-			'768': {
-				slidesPerView: 3,
-			},
-			'576': {
-				slidesPerView: 2,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-	});
-
-
-	////////////////////////////////////////////////////
-	// 19. Slider Js
-	var shopswiper = new Swiper('.tp-team-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 4,
-		spaceBetween: 25,
-		centereMode: true,
-		autoplay: {
-			delay: 3500,
-			disableOnInteraction: true,
-		},
-		breakpoints: {
-			'1400': {
-				slidesPerView: 4,
-			},
-			'1200': {
-				slidesPerView: 4,
-			},
-			'992': {
-				slidesPerView: 3,
-			},
-			'768': {
-				slidesPerView: 2,
-			},
-			'576': {
-				slidesPerView: 2,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-	});
-
-
-	////////////////////////////////////////////////////
-	// 20. Slider Js
-	var whitproductswiper = new Swiper('.related-product-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 5,
-		spaceBetween: 30,
-		autoplay: {
-			delay: 3500,
-			disableOnInteraction: true,
-		},
-		breakpoints: {
-			'1400': {
-				slidesPerView: 5,
-			},
-			'1200': {
-				slidesPerView: 5,
-			},
-			'992': {
-				slidesPerView: 4,
-			},
-			'768': {
-				slidesPerView: 2,
-			},
-			'576': {
-				slidesPerView: 2,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: '.tprelated__nxt',
-			prevEl: '.tprelated__prv',
-		},
-	});
-
-
-	////////////////////////////////////////////////////
-	// 21. Slider Js
-	var whitproductswiper = new Swiper('.product-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 5,
-		spaceBetween: 30,
-		autoplay: {
-			delay: 3500,
-			disableOnInteraction: true,
-		},
-		breakpoints: {
-			'1400': {
-				slidesPerView: 5,
-			},
-			'1200': {
-				slidesPerView: 5,
-			},
-			'992': {
-				slidesPerView: 4,
-			},
-			'768': {
-				slidesPerView: 3,
-			},
-			'576': {
-				slidesPerView: 3,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: '.tpproductarrow__nxt',
-			prevEl: '.tpproductarrow__prv',
-		},
-	});
-
-
-	////////////////////////////////////////////////////
 	// 22. Slider Js
 	$('[data-countdown]').each(function () {
 		var $this = $(this),
@@ -426,82 +206,6 @@
 
 			$this.html(event.strftime('<span class="cdown days"><span class="time-count">%-D</span> <p>Days</p></span> <span class="cdown hour"><span class="time-count">%-H</span> <p>Hour</p></span> <span class="cdown minutes"><span class="time-count">%M</span> <p>Minute</p></span> <span class="cdown second"> <span><span class="time-count">%S</span> <p>Second</p></span>'));
 		});
-	});
-
-
-
-	////////////////////////////////////////////////////
-	// 23. Brand Js
-	var brandswiper = new Swiper('.brand-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 6,
-		spaceBetween: 30,
-		freeMode: true,
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: true,
-		},
-		breakpoints: {
-			'1400': {
-				slidesPerView: 6,
-			},
-			'1200': {
-				slidesPerView: 4,
-			},
-			'992': {
-				slidesPerView: 3,
-			},
-			'768': {
-				slidesPerView: 3,
-			},
-			'576': {
-				slidesPerView: 2,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-	});
-
-
-
-	////////////////////////////////////////////////////
-	// 24. product Js
-	var platinamproswiper = new Swiper('.platinam-pro-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 4,
-		spaceBetween: 30,
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: true,
-		},
-		breakpoints: {
-			'1400': {
-				slidesPerView: 4,
-			},
-			'1200': {
-				slidesPerView: 3,
-			},
-			'992': {
-				slidesPerView: 2,
-			},
-			'768': {
-				slidesPerView: 2,
-			},
-			'576': {
-				slidesPerView: 1,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: '.tpplatiarrow__nxt',
-			prevEl: '.tpplatiarrow__prv',
-		},
 	});
 
 
@@ -523,62 +227,6 @@
 	});
 
 	////////////////////////////////////////////////////
-	// 27. product Js
-	var testiswiper = new Swiper('.testi-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 3,
-		spaceBetween: 30,
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: true,
-		},
-		breakpoints: {
-			'1400': {
-				slidesPerView: 3,
-			},
-			'1200': {
-				slidesPerView: 3,
-			},
-			'992': {
-				slidesPerView: 3,
-			},
-			'768': {
-				slidesPerView: 2,
-			},
-			'576': {
-				slidesPerView: 1,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: '.tptestiarrow__nxt',
-			prevEl: '.tptestiarrow__prv',
-		},
-	});
-
-	////////////////////////////////////////////////////
-	// 28. Postbox Js
-	var postboxswiper = new Swiper('.postbox-active', {
-		// Optional parameters
-		loop: true,
-		slidesPerView: 1,
-        spaceBetween: 0,
-		autoplay: {
-		  delay: 4000,
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: ".postbox-slider-button-next",
-			prevEl: ".postbox-slider-button-prev",
-		},
-	});
-
-
-	////////////////////////////////////////////////////
 	// 29. Postbox Js
 	var democol = $('.tpproduct [class*="col"]');
 	democol.on({
@@ -589,26 +237,6 @@
 			$(this).siblings().stop().css('z-index', '1');
 		}
 	});
-
-
-	////////////////////////////////////////////////////
-	// 30. Postbox Js
-	var swiper = new Swiper('.swiper--top', {
-		spaceBetween: 0,
-		centeredSlides: true,
-		speed: 30000,
-		slidesPerView: 1,
-		autoplay: {
-			delay: 1,
-		},
-		loop: true,
-		freeMode: true,
-		slidesPerView: 'auto',
-		allowTouchMove: false,
-		disableOnInteraction: true,
-	});
-		
-
-
+	
 
 })(jQuery);

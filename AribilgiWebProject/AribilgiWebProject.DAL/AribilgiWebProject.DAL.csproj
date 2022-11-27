@@ -75,6 +75,22 @@
     <Compile Include="Migrations\202211190919478_Version-1.5.designer.cs">
       <DependentUpon>202211190919478_Version-1.5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202211200811466_Version-1.6.cs" />
+    <Compile Include="Migrations\202211200811466_Version-1.6.designer.cs">
+      <DependentUpon>202211200811466_Version-1.6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211200819394_Version-1.7.cs" />
+    <Compile Include="Migrations\202211200819394_Version-1.7.designer.cs">
+      <DependentUpon>202211200819394_Version-1.7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211200858206_Version-1.8.cs" />
+    <Compile Include="Migrations\202211200858206_Version-1.8.designer.cs">
+      <DependentUpon>202211200858206_Version-1.8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211261148370_Version-1.9.cs" />
+    <Compile Include="Migrations\202211261148370_Version-1.9.designer.cs">
+      <DependentUpon>202211261148370_Version-1.9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NinicoDbEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +124,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202211190919478_Version-1.5.resx">
       <DependentUpon>202211190919478_Version-1.5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211200811466_Version-1.6.resx">
+      <DependentUpon>202211200811466_Version-1.6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211200819394_Version-1.7.resx">
+      <DependentUpon>202211200819394_Version-1.7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211200858206_Version-1.8.resx">
+      <DependentUpon>202211200858206_Version-1.8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211261148370_Version-1.9.resx">
+      <DependentUpon>202211261148370_Version-1.9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

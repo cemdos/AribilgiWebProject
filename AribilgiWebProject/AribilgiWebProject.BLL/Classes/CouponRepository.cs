@@ -13,16 +13,16 @@ namespace AribilgiWebProject.BLL.Classes
             var response = new BaseResponseModel<Coupon>();
             try
             {
-                var result  = UnitOfWork.GetAll<Coupon>()
+                var result  = UnitOfWork.Instance.GetAll<Coupon>()
                                             .Find(x => x.CouponCode == CouponCode);
                 if (result == null)
-                    throw new Exception("Kupon bulunamadı");
+                    throw new System.Exception("Kupon bulunamadı");
                 else if (result.AvailableCount <= result.UsedCount)
-                    throw new Exception("Kupon Kodu Daha önceden kullandı");
+                    throw new System.Exception("Kupon Kodu Daha önceden kullandı");
 
                 response.ResponseModel = result;
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 response.IsSuccess = false;
                 response.ErrorMessage = ex.Message;
@@ -36,7 +36,7 @@ namespace AribilgiWebProject.BLL.Classes
             try
             {
                 var couponCode = Guid.NewGuid().ToString().Substring(0, 5);
-                response.ResponseModel = UnitOfWork.AddData(new Coupon
+                response.ResponseModel = UnitOfWork.Instance.AddData(new Coupon
                 {
                     CouponCode = couponCode,
                     AvailableCount = 3,
@@ -44,7 +44,7 @@ namespace AribilgiWebProject.BLL.Classes
                     UsedCount = 0,
                 });
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 response.IsSuccess = false;
                 response.ErrorMessage = ex.Message;

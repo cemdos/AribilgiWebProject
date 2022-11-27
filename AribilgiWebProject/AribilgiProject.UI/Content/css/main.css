@@ -5826,10 +5826,10 @@ input[type=color] {
   left: 30px;
   font-size: 16px;
 }
-.tptrack__id form, .tptrack__email form {
+.tptrack__id .form, .tptrack__email .form {
   position: relative;
 }
-.tptrack__id form input, .tptrack__email form input {
+.tptrack__id .form input, .tptrack__email .form input {
   width: 100%;
   height: 60px;
   border: none;
@@ -5837,7 +5837,7 @@ input[type=color] {
   padding: 10px 60px;
   border-radius: 6px;
 }
-.tptrack__id form input::placeholder, .tptrack__email form input::placeholder {
+.tptrack__id .form input::placeholder, .tptrack__email .form input::placeholder {
   font-size: 14px;
   color: var(--tp-grey-9);
 }

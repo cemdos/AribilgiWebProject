@@ -1,5 +1,5 @@
-﻿var app = angular.module('App', ['ui.select']);
-app.controller('BaseCtrl', function ($scope, $http) {
+﻿var app = angular.module('App', ['ui.select','toaster']);
+app.controller('BaseCtrl', function ($scope, $http,toaster) {
     $scope.IsShowLoader = false;
     if (localStorage.getItem("Cart") != null) {
         var Cart = JSON.parse(localStorage.getItem("Cart"));

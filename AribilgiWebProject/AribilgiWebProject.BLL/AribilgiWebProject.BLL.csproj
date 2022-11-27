@@ -56,13 +56,17 @@
     <Compile Include="Classes\BaseResponseModel.cs" />
     <Compile Include="Classes\CouponRepository.cs" />
     <Compile Include="Classes\ImageRepository.cs" />
+    <Compile Include="Classes\OrderDetailRepository.cs" />
     <Compile Include="Classes\ProductRepository.cs" />
     <Compile Include="Classes\CategoryRepository.cs" />
     <Compile Include="Classes\CommonRepository.cs" />
+    <Compile Include="Classes\OrderRepository.cs" />
     <Compile Include="Classes\UserRepository.cs" />
     <Compile Include="Interfaces\BaseRepository.cs" />
     <Compile Include="Interfaces\ICouponRepository.cs" />
     <Compile Include="Interfaces\IImageRepository.cs" />
+    <Compile Include="Interfaces\IOrderDetailRepository.cs" />
+    <Compile Include="Interfaces\IOrderRepository.cs" />
     <Compile Include="Interfaces\IProductRepository.cs" />
     <Compile Include="Interfaces\ICategoryRepository.cs" />
     <Compile Include="Interfaces\ICommonRepository.cs" />
@@ -77,6 +81,10 @@
     <ProjectReference Include="..\AribilgiWebProject.DAL\AribilgiWebProject.DAL.csproj">
       <Project>{87f98a7a-0703-4d5f-b1a7-34e9703cc104}</Project>
       <Name>AribilgiWebProject.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AribilgiWebProject.Exception\AribilgiWebProject.Exception.csproj">
+      <Project>{d2409578-56f6-4634-8700-5b7c473f34be}</Project>
+      <Name>AribilgiWebProject.Exception</Name>
     </ProjectReference>
     <ProjectReference Include="..\AribilgiWebProject.Model\AribilgiWebProject.Model.csproj">
       <Project>{0739162e-1f87-45af-94f0-7c805b2e9707}</Project>

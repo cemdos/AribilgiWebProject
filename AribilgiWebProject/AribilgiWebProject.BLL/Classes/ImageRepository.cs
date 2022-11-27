@@ -14,12 +14,12 @@ namespace AribilgiWebProject.BLL.Classes
             var response = new BaseResponseModel<List<Image>>();
             try
             {
-                response.ResponseModel = UnitOfWork.GetAll<Image>()
+                response.ResponseModel = UnitOfWork.Instance.GetAll<Image>()
                                 .Where(x => x.TableReferance == ProductId 
                                       && x.TableName == "Product")
                                 .ToList();
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 response.IsSuccess = false;
                 response.ErrorMessage = ex.Message;

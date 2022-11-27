@@ -13,10 +13,10 @@ namespace AribilgiWebProject.BLL.Classes
             BaseResponseModel<T> responseModel = new BaseResponseModel<T>();
             try
             {
-                responseModel.ResponseModel = UnitOfWork.AddData(model);
+                responseModel.ResponseModel = UnitOfWork.Instance.AddData(model);
                 responseModel.ResponseMessage = "Command completed Successful";
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 responseModel.IsSuccess = false;
                 responseModel.ErrorMessage = ex.Message;
@@ -29,10 +29,10 @@ namespace AribilgiWebProject.BLL.Classes
             BaseResponseModel<List<T>> responseModel = new BaseResponseModel<List<T>>();
             try
             {
-                responseModel.ResponseModel = UnitOfWork.GetAll<T>();
+                responseModel.ResponseModel = UnitOfWork.Instance.GetAll<T>();
                 responseModel.ResponseMessage = "Command completed Successful";
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 responseModel.IsSuccess = false;
                 responseModel.ErrorMessage = ex.Message;
@@ -45,10 +45,10 @@ namespace AribilgiWebProject.BLL.Classes
             BaseResponseModel<T> responseModel = new BaseResponseModel<T>();
             try
             {
-                responseModel.ResponseModel = UnitOfWork.GetById<T>(id);
+                responseModel.ResponseModel = UnitOfWork.Instance.GetById<T>(id);
                 responseModel.ResponseMessage = "Command completed Successful";
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 responseModel.IsSuccess = false;
                 responseModel.ErrorMessage = ex.Message;
@@ -61,10 +61,10 @@ namespace AribilgiWebProject.BLL.Classes
             BaseResponseModel<T> responseModel = new BaseResponseModel<T>();
             try
             {
-                responseModel.ResponseModel = UnitOfWork.RemoveData<T>(id);
+                responseModel.ResponseModel = UnitOfWork.Instance.RemoveData<T>(id);
                 responseModel.ResponseMessage = "Command completed Successful";
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 responseModel.IsSuccess = false;
                 responseModel.ErrorMessage = ex.Message;
@@ -77,10 +77,10 @@ namespace AribilgiWebProject.BLL.Classes
             BaseResponseModel<T> responseModel = new BaseResponseModel<T>();
             try
             {
-                responseModel.ResponseModel = UnitOfWork.UpdateData(model);
+                responseModel.ResponseModel = UnitOfWork.Instance.UpdateData(model);
                 responseModel.ResponseMessage = "Command completed Successful";
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 responseModel.IsSuccess = false;
                 responseModel.ErrorMessage = ex.Message;

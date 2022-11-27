@@ -18,6 +18,9 @@ namespace AribilgiWebProject.DAL
         public virtual DbSet<Coupon> Coupon { get; set; }
         public virtual DbSet<City> City { get; set; }
         public virtual DbSet<District> District { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetail { get; set; }
+        public virtual DbSet<UserInfo> UserInfo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -59,6 +62,22 @@ namespace AribilgiWebProject.DAL
 
             modelBuilder.Entity<District>()
                 .Property(e => e.DistrictName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Order>()
+                .Property(e => e.CustomerName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Order>()
+                .Property(e => e.CustomerSurname)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<UserInfo>()
+                .Property(e => e.ShippedAddress)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<UserInfo>()
+                .Property(e => e.InvoiceAddress)
                 .IsUnicode(false);
         }
     }

@@ -39,10 +39,10 @@
                                 <div class="col-md-12">
                                     <div>
                                         <label>City <span class="required">*</span></label>
-                                        <ui-select ng-model="Order.City" theme="bootstrap">
-                                            <ui-select-match placeholder="Search...">{{city.CityName}}</ui-select-match>
+                                        <ui-select ng-model="Order.City">
+                                            <ui-select-match placeholder="Search...">{{$select.selected.CityName}}</ui-select-match>
                                             <ui-select-choices repeat="city in CityList | filter: city.CityName">
-                                                <div ng-bind-html="city | highlight: city.CityName"></div>
+                                                <div ng-bind-html="city | highlight: $select.search"></div>
                                             </ui-select-choices>
                                         </ui-select>
                                     </div>
@@ -50,13 +50,13 @@
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>First Name <span class="required">*</span></label>
-                                        <input ng-model="Order.FirstName" type="text" placeholder="" required />
+                                        <input ng-model="Order.CustomerName" type="text" placeholder="" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Last Name <span class="required">*</span></label>
-                                        <input ng-model="Order.LastName" type="text" placeholder="" required />
+                                        <input ng-model="Order.CustomerSurname" type="text" placeholder="" required />
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                                             {{cart.Product.Name}} <strong class="product-quantity"> × {{cart.Quantity}}</strong>
                                         </td>
                                         <td class="product-total">
-                                            <span class="amount">${{cart.Product.UnitPrice}}</span>
+                                            <span class="amount">${{cart.Product.UnitPrice * cart.Quantity}}</span>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -88,6 +88,10 @@
                                     <tr class="cart-subtotal">
                                         <th>Cart Subtotal</th>
                                         <td><span class="amount">${{GetSubTotal()}}</span></td>
+                                    </tr>
+                                    <tr ng-show="GetDiscount()!=0 && GetDiscount()!=null" class="cart-subtotal">
+                                        <th>Cart Discount</th>
+                                        <td><span class="amount">${{GetDiscount()}}</span></td>
                                     </tr>
                                     <tr class="shipping">
                                         <th>Shipping</th>
@@ -105,7 +109,7 @@
                                     <tr class="order-total">
                                         <th>Order Total</th>
                                         <td>
-                                            <strong><span class="amount">$215.00</span></strong>
+                                            <strong><span class="amount">${{GetSubTotal()-GetDiscount()+7}}</span></strong>
                                         </td>
                                     </tr>
                                 </tfoot>

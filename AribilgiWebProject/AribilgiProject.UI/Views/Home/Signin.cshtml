@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewBag.PageName = "Sign In";
+}
+
+<div ng-controller="SignInCtrl">
+    <!-- breadcrumb-area -->
+    <section class="breadcrumb__area pt-60 pb-60 tp-breadcrumb__bg" data-background="/Content/img/banner/breadcrumb-01.jpg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-7 col-lg-12 col-md-12 col-12">
+                    <div class="tp-breadcrumb">
+                        <div class="tp-breadcrumb__link mb-10">
+                            <span class="breadcrumb-item-active"><a href="index.html">Home</a></span>
+                            <span>Login & Signup</span>
+                        </div>
+                        <h2 class="tp-breadcrumb__title">@ViewBag.PageName</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb-area-end -->
+
+    <section class="track-area pt-80 pb-40" ng-show="ActiveUser!=null">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="tptrack__product mb-40">
+                        <div class="tptrack__thumb">
+                            <img src="/Content/img/banner/login-bg.jpg" alt="">
+                        </div>
+                        <div class="tptrack__content grey-bg-3">
+                            <div class="tptrack__item d-flex mb-20">
+                                <div class="tptrack__item-content">
+                                    <h4 class="tptrack__item-title">Address Defination</h4>
+                                </div>
+                            </div>
+                            <div class="tptrack__id mb-10">
+                                <div class="form">
+                                    <textarea rows="5" class="form-control" ng-model="AdressModel.InvoiceAddress" type="text" placeholder="Invoice Address"></textarea>
+                                </div>
+                            </div>
+                            <div class="tptrack__email mb-10">
+                                <div class="form">
+                                    <textarea rows="5" class="form-control" ng-model="AdressModel.ShipAddress" type="text" placeholder="Shipped Address"></textarea>
+                                </div>
+                            </div>
+                            <div class="tptrack__btn">
+                                <button ng-click="SaveAddress()" class="tptrack__submition">Save Address</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- track-area-start -->
+    <section class="track-area pt-80 pb-40" ng-show="ActiveUser==null">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="tptrack__product mb-40">
+                        <div class="tptrack__thumb">
+                            <img src="/Content/img/banner/login-bg.jpg" alt="">
+                        </div>
+                        <div class="tptrack__content grey-bg-3">
+                            <div class="tptrack__item d-flex mb-20">
+                                <div class="tptrack__item-icon">
+                                    <img src="/Content/img/icon/lock.png" alt="">
+                                </div>
+                                <div class="tptrack__item-content">
+                                    <h4 class="tptrack__item-title">Login Here</h4>
+                                    <p>Your personal data will be used to support your experience throughout this website, to manage access to your account.</p>
+                                </div>
+                            </div>
+                            <div class="tptrack__id mb-10">
+                                <div class="form">
+                                    <span><i class="fal fa-user"></i></span>
+                                    <input ng-model="LoginModel.UserName" type="text" placeholder="Username">
+                                </div>
+                            </div>
+                            <div class="tptrack__email mb-10">
+                                <div class="form">
+                                    <span><i class="fal fa-key"></i></span>
+                                    <input ng-model="LoginModel.Password" type="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="tpsign__remember d-flex align-items-center justify-content-between mb-15">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+                                </div>
+                                <div class="tpsign__pass">
+                                    <a href="#">Forget Password</a>
+                                </div>
+                            </div>
+                            <div class="tptrack__btn">
+                                <button ng-click="LoginUser()" class="tptrack__submition">Login Now<i class="fal fa-long-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="tptrack__product mb-40">
+                        <div class="tptrack__thumb">
+                            <img src="/Content/img/banner/sign-bg.jpg" alt="">
+                        </div>
+                        <div class="tptrack__content grey-bg-3">
+                            <div class="tptrack__item d-flex mb-20">
+                                <div class="tptrack__item-icon">
+                                    <img src="/Content/img/icon/sign-up.png" alt="">
+                                </div>
+                                <div class="tptrack__item-content">
+                                    <h4 class="tptrack__item-title">Sign Up</h4>
+                                    <p>Your personal data will be used to support your experience throughout this website, to manage access to your account.</p>
+                                </div>
+                            </div>
+                            <div class="tptrack__id mb-10">
+                                <div class="form">
+                                    <span><i class="fal fa-envelope"></i></span>
+                                    <input ng-model="UserModel.UserName" type="text" placeholder="User Name">
+                                </div>
+                            </div>
+                            <div class="tptrack__id mb-10">
+                                <div class="form">
+                                    <span><i class="fal fa-envelope"></i></span>
+                                    <input ng-model="UserModel.Email" type="email" placeholder="Email address">
+                                </div>
+                            </div>
+                            <div class="tptrack__email mb-10">
+                                <div class="form">
+                                    <span><i class="fal fa-key"></i></span>
+                                    <input ng-model="UserModel.Password" type="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="tpsign__account">
+                                <a href="#">Already Have Account?</a>
+                            </div>
+                            <div class="tptrack__btn">
+                                <button ng-click="RegisterUser()" class="tptrack__submition tpsign__reg">Register Now<i class="fal fa-long-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- track-area-end -->
+</div>
+
+@section AngularCtrl
+{
+    <script src="/Scripts/MyAngular/SigninCtrl.js"></script>
+}
+

@@ -7,41 +7,67 @@ namespace AribilgiWebProject.DAL
 {
     public class UnitOfWork
     {
-		private static NinicoDbEntities context => new NinicoDbEntities();
+        private static NinicoDbEntities context;
+        private static UnitOfWork instance;
 
-        public static T AddData<T>(T model) where T : BaseModel
+        private static NinicoDbEntities Context
         {
-            var addedData = context.Set<T>().Add(model);
-            context.SaveChanges();
+            get
+            {
+                if (context == null)
+                    context = new NinicoDbEntities();
+                return context;
+            }
+        }
+        public static UnitOfWork Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new UnitOfWork();
+                return instance;
+            }
+        }
+
+
+        public T AddData<T>(T model) where T : BaseModel
+        {
+            var addedData = Context.Set<T>().Add(model);
+            Context.Entry(model).State = EntityState.Added;
+            //context.Category.Add(new Category
+            //{
+            //    Name = "Test"
+            //});
+            int effectedRow = Context.SaveChanges();
             return addedData;
         }
 
-        public static List<T> GetAll<T>() where T :BaseModel
+        public List<T> GetAll<T>() where T : BaseModel
         {
-            List<T> resultDatas = context.Set<T>().Where(_=> !_.Deleted).ToList();
+            List<T> resultDatas = Context.Set<T>().Where(_ => !_.Deleted).ToList();
             return resultDatas;
         }
 
-        public static T GetById<T>(int id) where T : BaseModel
+        public T GetById<T>(int id) where T : BaseModel
         {
-            T resultData = context.Set<T>().Find(id);
+            T resultData = Context.Set<T>().Find(id);
             return resultData;
         }
 
-        public static T UpdateData<T>(T model) where T : BaseModel
+        public T UpdateData<T>(T model) where T : BaseModel
         {
-            var updating = context.Set<T>().Find(model.ID);
+            var updating = Context.Set<T>().Find(model.ID);
             updating = model;
-            context.Entry(updating).State = EntityState.Modified;
-            context.SaveChanges();
+            Context.Entry(updating).State = EntityState.Modified;
+            Context.SaveChanges();
             return model;
         }
 
-        public static T RemoveData<T>(int id) where T : BaseModel
+        public T RemoveData<T>(int id) where T : BaseModel
         {
-            var deletingData = context.Set<T>().Find(id);
-            var deletedData = context.Set<T>().Remove(deletingData);
-            context.SaveChanges();
+            var deletingData = Context.Set<T>().Find(id);
+            var deletedData = Context.Set<T>().Remove(deletingData);
+            Context.SaveChanges();
             return deletedData;
         }
 
