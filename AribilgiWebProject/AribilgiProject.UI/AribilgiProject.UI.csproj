@@ -1028,6 +1028,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\MyAngular\Admin\CategoryCtrl.js" />
     <Content Include="Scripts\MyAngular\Admin\LoginCtrl.js" />
     <Content Include="Scripts\MyAngular\Admin\BaseCtrl.js" />
     <Content Include="Scripts\MyAngular\CheckoutCtrl.js" />
@@ -1120,6 +1121,9 @@
     <Content Include="Scripts\select.min.js.map" />
     <Content Include="Views\Home\Signin.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\Layout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Category.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

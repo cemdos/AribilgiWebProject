@@ -8,13 +8,22 @@ namespace AribilgiProject.UI.Controllers
 {
     public class AdminController : Controller
     {
-        // GET: Admin
+        public ActionResult Layout()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
         public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult Category()
         {
             return View();
         }

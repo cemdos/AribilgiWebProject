@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace AribilgiWebProject.RESTFUL.Controllers
@@ -16,7 +17,7 @@ namespace AribilgiWebProject.RESTFUL.Controllers
         [AllowAnonymous]
         [HttpGet]
         [Route("Account/Login/{UserName}/{Password}")]
-        public Token Login(string UserName, string Password)
+        public async Task<Token> Login(string UserName, string Password)
         {
             string baseAddress = "http://localhost:50406/";
             using (var client = new HttpClient())
@@ -27,8 +28,8 @@ namespace AribilgiWebProject.RESTFUL.Controllers
                    {"UserName", UserName},
                    {"Password", Password},
                };
-                var tokenResponse = client.PostAsync(baseAddress + "/token", new FormUrlEncodedContent(form)).Result;
-                var token = tokenResponse.Content.ReadAsAsync<Token>(new[] { new JsonMediaTypeFormatter() }).Result;
+                var tokenResponseAsync = await client.PostAsync($"{baseAddress}/token", new FormUrlEncodedContent(form));
+                var token = tokenResponseAsync.Content.ReadAsAsync<Token>(new[] { new JsonMediaTypeFormatter() }).Result;
                 return token;
             }
         }
