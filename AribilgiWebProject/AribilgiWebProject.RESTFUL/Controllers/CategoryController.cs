@@ -10,7 +10,9 @@ using System.Web.Http;
 
 namespace AribilgiWebProject.RESTFUL.Controllers
 {
+#if !DEBUG
     [Authorize]
+#endif
     public class CategoryController : ApiController
     {
         private CategoryRepository categoryRepository;
@@ -36,6 +38,33 @@ namespace AribilgiWebProject.RESTFUL.Controllers
                 responseData.ResponseModel.Add(viewModelItem);
             }
             return responseData;
+        }
+        [HttpGet]
+        [Route("api/Category/AddCategory/{Name}/{Icon}/{Description}/{ParentId}")]
+        public BaseResponseModel<Category> AddCategory(string Name,string Icon,string Description, int ParentId)
+        {
+            try
+            {
+                var categoryModel = new Category
+                {
+                    Name = Name,
+                    Icon = Icon,
+                    Description = Description,
+                    ParentId = ParentId
+                };
+                var result = categoryRepository.Add(categoryModel);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponseModel<Category>
+                {
+                    ErrorMessage = ex.Message,
+                    ResponseCode = Common.Enums.ResponseCode.ValidationErrors,
+                    IsSuccess = false
+                };
+            }
+
         }
 
     }

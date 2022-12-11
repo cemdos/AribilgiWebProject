@@ -1040,6 +1040,7 @@
     <Content Include="Scripts\select.js" />
     <Content Include="Scripts\select.min.js" />
     <Content Include="Scripts\toaster.js" />
+    <Content Include="StaticHtml\NewCategoryPopupTemplate.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

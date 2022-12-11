@@ -7,15 +7,14 @@
 <div ng-controller="CategoryCtrl">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title"></h3>
+            <h3 class="card-title">
+                <button type="button" class="btn btn-block btn-outline-success" data-toggle="modal" data-target="#NewCategoryPopup">
+                    New category
+                </button>
+            </h3>
             <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-default">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
+                    <input type="text" ng-model="txtSearch" name="table_search" class="form-control float-right" placeholder="Search">
                 </div>
             </div>
         </div>
@@ -32,15 +31,64 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>183</td>
-                        <td>John Doe</td>
-                        <td>11-7-2014</td>
-                        <td><span class="tag tag-success">Approved</span></td>
-                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>              
+                    <tr ng-repeat="category in CategoryList | orderBy:Name | filter : txtSearch">
+                        <td>{{category.Name}}</td>
+                        <td>{{category.Icon}}</td>
+                        <td>{{category.ParentId}}</td>
+                        <td>{{category.Tags}}</td>
+                        <td>{{category.Description}}</td>
+                    </tr>
                 </tbody>
             </table>
+        </div>
+
+    </div>
+
+    <div class="modal fade show" ng-show="ShowPopup" id="NewCategoryPopup" style="padding-right: 17px;" aria-modal="true" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">New Category</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="CategoryModel.Name" type="text" placeholder="Name" />
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="CategoryModel.Icon" type="text" placeholder="Icon" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="CategoryModel.ParentId" type="number" placeholder="ParentId" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="CategoryModel.Tags" type="text" placeholder="Tags" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="CategoryModel.Description" type="text" placeholder="Description" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="SaveChange()">Save changes</button>
+                </div>
+            </div>
+
         </div>
 
     </div>
