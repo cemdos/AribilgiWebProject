@@ -3,6 +3,7 @@ using System.Data.Entity;
 
 namespace AribilgiWebProject.DAL
 {
+    //CEmdos TEst
     public partial class NinicoDbEntities : DbContext
     {
         public NinicoDbEntities()
