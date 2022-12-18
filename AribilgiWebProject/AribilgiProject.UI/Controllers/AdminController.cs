@@ -27,5 +27,9 @@ namespace AribilgiProject.UI.Controllers
         {
             return View();
         }
+        public ActionResult Product()
+        {
+            return View();
+        }
     }
 }

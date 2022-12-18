@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Admin/Layout.cshtml";
+}
+
+<div ng-controller="ProductCtrl">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                <button type="button" class="btn btn-block btn-outline-success" data-toggle="modal" data-target="#NewCategoryPopup">
+                    New product
+                </button>
+            </h3>
+            <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" ng-model="txtSearch" name="table_search" class="form-control float-right" placeholder="Search">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Stock</th>
+                        <th>UnitPrice</th>
+                        <th>Discount</th>
+                        <th>Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="category in ProductList | orderBy:Name | filter : txtSearch">
+                        <td>{{category.Name}}</td>
+                        <td>{{category.Description}}</td>
+                        <td>{{category.Stock}}</td>
+                        <td>{{category.UnitPrice}}</td>
+                        <td>{{category.Discount}}</td>
+                        <td>{{category.Rate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="modal fade show" ng-show="ShowPopup" id="NewCategoryPopup" style="padding-right: 17px;" aria-modal="true" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">New Product</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <select class="form-control" ng-model="ProductModel.CategoryId">
+                                    <option value="">Seçiniz..</option>
+                                    <option value="{{category.ID}}" ng-repeat="category in CategoryList">{{category.Name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="ProductModel.Name" type="text" placeholder="Name" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="ProductModel.Stock" type="number" placeholder="Stock" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="ProductModel.UnitPrice" type="number" placeholder="UnitPrice" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="ProductModel.Discount" type="number" min="0" max="100" placeholder="Discount" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" ng-model="ProductModel.Rate" type="number" max="5" placeholder="Rate" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <textarea rows="5" class="form-control" ng-model="ProductModel.Description" placeholder="Description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="SaveChange()">Save changes</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@section AngularCtrl
+{
+    <script src="/Scripts/MyAngular/Admin/ProductCtrl.js"></script>
+}
